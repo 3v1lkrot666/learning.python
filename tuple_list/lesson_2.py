@@ -12,6 +12,16 @@ def main():
         number = tuple(i for i in str(int(input("Введите целое число>>> "))))
     except ValueError:
         number = "Указанное значение не является числом"
-    return number[-1::]
+    result = {
+        "one_variable": number,
+        "two_variable": number[::-1]
+    }
+    return result 
 
-print(main())
+
+
+res = main()
+print(
+    f"прямой вывод кортежа: {res['one_variable']}\
+    \nперевернутый вывод кортежа: {res['two_variable']}"
+    )
